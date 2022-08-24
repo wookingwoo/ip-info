@@ -107,6 +107,16 @@ Hub](https://hub.docker.com/r/mpolden/echoip), which can be downloaded with:
 
 `docker pull mpolden/echoip`
 
+
+## Get started with Dockerfile
+
+docker run -p <host port number>:<container port number>/<protocol> [IMAGE NAME] [OTHER OPTIONS...]
+
+```
+docker build . -t wookingwoo-ip-info:1.0
+docker run -i -t -d -p 8001:8080 --name wookingwoo-ip-info wookingwoo-ip-info:1.0
+```
+
 ### Usage
 
 ```
