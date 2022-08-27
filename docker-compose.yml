@@ -1,18 +1,22 @@
-version: "3.8"
+version: '3.7'
+
 services:
   echoip:
     image: mpolden/echoip
-    command: >
-      -p
-      -r
-      -H X-Forwarded-For
-      -a /data/GeoLite2-ASN.mmdb
-      -c /data/GeoLite2-City.mmdb
-      -f /data/GeoLite2-Country.mmdb
+    command: "-C 0 -p -r -H X-Forwarded-For -a /data/GeoLite2-ASN.mmdb -c /data/GeoLite2-City.mmdb -f /data/GeoLite2-Country.mmdb"
     ports:
-      - "8001:8080"
+      - 8001:8080
     volumes:
-      - "./wookingwoo_data/GeoLite2:/data"
-    restart: unless-stopped
+      - ./data:/data:ro
 
-# docker-compose -f docker-compose.yml up
+  # this container needs to runs only once or whan you want to update Geo databases
+  maxmind:
+    image: maxmindinc/geoipupdate
+    environment:
+      - GEOIPUPDATE_ACCOUNT_ID= # get your own account from https://www.maxmind.com/
+      - GEOIPUPDATE_LICENSE_KEY= # get your own key from https://www.maxmind.com/
+      - GEOIPUPDATE_EDITION_IDS=GeoLite2-ASN GeoLite2-City GeoLite2-Country
+    volumes:
+      - ./data:/usr/share/GeoIP
+
+# docker-compose -f docker-compose.yml up -d --build
