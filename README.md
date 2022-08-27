@@ -1,9 +1,9 @@
-# echoip
+# wookingwoo-ip-info
 
-![Build Status](https://github.com/mpolden/echoip/workflows/ci/badge.svg)
+[//]: # (![Build Status]&#40;https://github.com/wookingwoo/ip-info/workflows/ci/badge.svg&#41;)
 
 A simple service for looking up your IP address. This is the code that powers
-https://ifconfig.co.
+https://ip.wookingwoo.com.
 
 ## Usage
 
