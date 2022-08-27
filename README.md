@@ -117,6 +117,14 @@ docker build . -t wookingwoo-ip-info:1.0
 docker run -i -t -d -p 8001:8080 --name wookingwoo-ip-info wookingwoo-ip-info:1.0
 ```
 
+## Get started with docker-compose
+
+To use GeoLite2, get your own account and key from https://www.maxmind.com/
+
+```
+docker-compose -f docker-compose.yml up -d --build
+```
+
 ### Usage
 
 ```
