@@ -10,6 +10,7 @@ services:
       - 8001:8080
     volumes:
       - ./data:/data:ro
+    restart: unless-stopped
 
   # this container needs to runs only once or whan you want to update Geo databases
   maxmind:
