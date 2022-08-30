@@ -84,8 +84,6 @@ between IPv4 and IPv6 lookup.
 * All endpoints (except `/port`) can return information about a custom IP address specified via `?ip=` query parameter
 * Open source under the [BSD 3-Clause license](https://opensource.org/licenses/BSD-3-Clause)
 
-
-
 ## Building
 
 Compiling requires the [Golang compiler](https://golang.org/) to be installed.
@@ -102,7 +100,6 @@ A Docker image is available on [Docker
 Hub](https://hub.docker.com/r/mpolden/echoip), which can be downloaded with:
 
 `docker pull mpolden/echoip`
-
 
 ## Get started with Dockerfile
 
