@@ -118,7 +118,7 @@ To use GeoLite2, get your own account and key from https://www.maxmind.com/
 docker-compose -f docker-compose.yml up -d --build
 ```
 
-## Update geoip using cron
+## Update geoip with cron
 
 https://github.com/wookingwoo/ip-info/blob/wookingwoo-main/geoip_update.sh
 
