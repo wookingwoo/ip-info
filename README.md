@@ -39,8 +39,10 @@ $ curl ip.wookingwoo.com/city
 Mapo-gu
 
 $ curl ip.wookingwoo.com/asn
-AS4766
-```
+AS59795
+
+$ curl ifconfig.co/asn-org
+Hosting4Real
 
 As JSON:
 
