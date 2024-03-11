@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  ip-info:
+    build: # 빌드 지정
+      context: . # Dockerfile이 있는 디렉토리 경로
+      dockerfile: Dockerfile # 도커파일명
+    command: "-C 0 -p -r -H X-Forwarded-For -a /data/GeoLite2-ASN.mmdb -c /data/GeoLite2-City.mmdb -f /data/GeoLite2-Country.mmdb"
+    ports:
+      - 8001:8080
+    volumes:
+      - ./data:/data:ro
+    restart: unless-stopped
+
+  # this container needs to runs only once or whan you want to update Geo databases
+  maxmind:
+    image: maxmindinc/geoipupdate
+    environment:
+      - GEOIPUPDATE_ACCOUNT_ID=  # get your own account from https://www.maxmind.com/
+      - GEOIPUPDATE_LICENSE_KEY=  # get your own key from https://www.maxmind.com/
+      - GEOIPUPDATE_EDITION_IDS=GeoLite2-ASN GeoLite2-City GeoLite2-Country
+    volumes:
+      - ./data:/usr/share/GeoIP
+
+# docker-compose -f docker-compose.yml up -d --build

@@ -2,13 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>What is my IP address? &mdash; {{ .Host }}</title>
+<!--    <title>What is my IP address? &mdash; {{ .Host }}</title>-->
+    <title>wookingwoo-ip-info</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="{{ .Host }} • What is my IP address? &mdash; The best tool to find your own IP address, and information about it."
+      content="{{ .Host }} • What is my IP address? &mdash; wookingwoo-ip-info is the best tool to find your own IP address, and information about it."
     />
-    <link rel="canonical" href="https://ifconfig.co/" />
+
+    <link
+            rel="shortcut icon"
+            href="https://wookingwoo-logo.s3.ap-northeast-2.amazonaws.com/ico/mainIcon.ico"
+            type="image/x-icon"
+    />
+
+    <link rel="canonical" href="http://ip.wookingwoo.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
@@ -34,11 +42,11 @@
       <div class="pure-g gutters center">
         <div class="pure-u-1 pure-u-md-2-3">
           <div class="l-box">
-            <h1>{{ .Host }} — What is my IP address?</h1>
+<!--            <h1>{{ .Host }} — What is my IP address?</h1>-->
+            <h1>ip.wookingwoo.com — What is my IP address?</h1>
             <p><code class="ip">{{ .IP }}</code></p>
             <p>
-              The best tool to find your own IP address, and information about
-              it.
+              wookingwoo-ip-info is the best tool to find your own IP address, and information about it.
             </p>
           </div>
         </div>
@@ -321,7 +329,7 @@
               <h3>Can I run my own service?</h3>
               <p>
                 Yes, the source code and documentation is available on
-                <a href="https://github.com/mpolden/echoip">GitHub</a>.
+                <a href="https://github.com/wookingwoo/ip-info">GitHub</a>.
               </p>
             </div>
           </div>
