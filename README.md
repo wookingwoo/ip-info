@@ -43,6 +43,7 @@ AS59795
 
 $ curl ifconfig.co/asn-org
 Hosting4Real
+```
 
 As JSON:
 
