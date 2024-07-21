@@ -16,8 +16,8 @@ services:
   maxmind:
     image: maxmindinc/geoipupdate
     environment:
-      - GEOIPUPDATE_ACCOUNT_ID=  # get your own account from https://www.maxmind.com/
-      - GEOIPUPDATE_LICENSE_KEY=  # get your own key from https://www.maxmind.com/
+      - GEOIPUPDATE_ACCOUNT_ID=${GEOIPUPDATE_ACCOUNT_ID}  # get your own account from https://www.maxmind.com/
+      - GEOIPUPDATE_LICENSE_KEY=${GEOIPUPDATE_LICENSE_KEY}  # get your own key from https://www.maxmind.com/
       - GEOIPUPDATE_EDITION_IDS=GeoLite2-ASN GeoLite2-City GeoLite2-Country
     volumes:
       - ./data:/usr/share/GeoIP
